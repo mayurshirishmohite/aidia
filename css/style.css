@@ -111,17 +111,41 @@ body {
   border: 1px solid #FF6F61;
 }
 
-.pricing-table {
-  background: linear-gradient(to bottom, #FF6F61, #000000);
-  max-width: 330px;
-  box-shadow: 0px 0px 20px 0px #ff6f61;
-  border: 2px solid #fff;
-}
+
 /* Pricing */
 .aidia-offer {
   position: absolute;
   left: 5%;
   display: flex;
+}
+
+.pricing-table {
+  background: linear-gradient(to bottom, #FF6F61, #000000);
+  max-width: 330px;
+  box-shadow: 0px 0px 20px 0px #ff6f61;
+  border: 2px solid #fff;
+  transition: box-shadow 0.4s ease;
+}
+
+.pricing-table:hover {
+  box-shadow: 0 1rem 5rem rgb(255, 110, 97); /* big orange shadow */
+  z-index: 2;
+}
+@keyframes subtleGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(255, 111, 97, 0.15);
+  }
+  50% {
+    box-shadow: 0px 0px 20px 0px rgba(255, 111, 97, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(255, 111, 97, 0.15);
+  }
+}
+
+.glow-highlight {
+  animation: subtleGlow 3s ease-in-out infinite;
+  border-radius: 1rem; /* match your design */
 }
 /* FAQ Accordion Button Override */
 .accordion-item {
@@ -230,7 +254,19 @@ footer {
   font-size: 1.2rem;
   color: #FF6F61;
 }
-
+.chevron-list li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+.chevron-list li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff; /* adjust based on your background */
+  font-size: 1rem;
+  line-height: 1.6;
+}
 /* Seminar Banner */
 .seminar-banner .row {
   border-radius: 25px;
